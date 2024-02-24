@@ -11,7 +11,7 @@ export default function LoginPage() {
       <div className="bg-white border border-slate-200 rounded-3xl text-center max-w-full w-[450px] mx-auto p-10 pt-14 shadow-sm">
         <h2 className="text-xl font-medium mb-16">Sign In</h2>
         <div className="flex items-center gap-5">
-          <span className="font-medium text-slate-500">Sign in as:</span>{' '}
+          <span className="font-medium text-slate-500">Sign in as</span>{' '}
           <Button onClick={() => logIn('user')} className="ml-auto flex-1">
             User
           </Button>{' '}
