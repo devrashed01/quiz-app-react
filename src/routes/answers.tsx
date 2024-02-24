@@ -8,10 +8,10 @@ import useAppState from 'hooks/useAppState';
 
 export default function AnswersPage() {
   const { questions, submitAnswers, answers, userRole, previousAnswers } = useAppState();
-  const [currentQuestionPosition, setCurrentQuestionPosition] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
+  const [currentQuestionPosition, setCurrentQuestionPosition] = useState<number>(0);
+  const [isComplete, setIsComplete] = useState<boolean>(false);
   const [answered, setAnswered] = useState<AnswerType[]>([]);
-  const [showQuestions, setShowQuestions] = useState(false);
+  const [showQuestions, setShowQuestions] = useState<boolean>(false);
 
   const isUser = userRole === 'user';
 
