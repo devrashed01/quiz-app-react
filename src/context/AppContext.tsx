@@ -9,6 +9,7 @@ interface State {
   previousAnswers: AnswerType[];
 }
 
+// extend the State interface to include the functions
 interface AppState extends State {
   logOut: () => void;
   logIn: (user: UserRole) => void;
@@ -33,10 +34,12 @@ const AppContextProvider = ({ children }: PropsWithChildren<unknown>) => {
   const cachedState = localStorage.getItem('state');
   const [state, setState] = useState<AppState>(cachedState ? JSON.parse(cachedState) : initState);
 
+  // Save state to local storage
   useEffect(() => {
     localStorage.setItem('state', JSON.stringify(state));
   }, [state]);
 
+  // If there are no questions in the state, set the default questions
   useEffect(() => {
     if (state.questions.length === 0) {
       setState((prev) => ({

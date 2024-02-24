@@ -1,6 +1,6 @@
 import Card from 'components/Card';
 import NoData from 'components/NoData';
-import { cn } from 'utils/cn';
+import AnswerOption from './AnswerOption';
 
 type Props = {
   answers: AnswerType[];
@@ -17,17 +17,11 @@ export default function AnswersList({ answers }: Props) {
             </h3>
             <ul>
               {answer.options.map((option, index) => (
-                <li
+                <AnswerOption
                   key={index}
-                  className={cn('text-sm p-2 border border-slate-300 rounded-md mb-2', {
-                    'bg-green-600 text-white border-transparent':
-                      answer.answer === index && answer.answer === answer.correctAnswer,
-                    'bg-red-500 text-white border-transparent':
-                      answer.answer === index && answer.answer !== answer.correctAnswer,
-                  })}
-                >
-                  {option}
-                </li>
+                  isCorrect={answer.answer === index && answer.answer === answer.correctAnswer}
+                  value={option}
+                />
               ))}
             </ul>
           </Card>

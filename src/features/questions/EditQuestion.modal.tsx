@@ -101,6 +101,13 @@ export default function EditQuestionModal({ onClose, data, open }: Props) {
     onClose();
   };
 
+  const selectOptions = form.options
+    .filter((el) => !!el)
+    .map((option, index) => ({
+      label: option,
+      value: index + '',
+    }));
+
   return (
     <Modal title="Edit Question" className="max-w-2xl" onCancel={onClose} visible={open}>
       <form onSubmit={submitHandler} className="flex flex-col gap-3">
@@ -124,12 +131,7 @@ export default function EditQuestionModal({ onClose, data, open }: Props) {
           placeholder="Select correct answer"
           onChange={selectHandler}
           value={form.correctAnswer}
-          options={form.options
-            .filter((el) => !!el)
-            .map((option, index) => ({
-              label: option,
-              value: index + '',
-            }))}
+          options={selectOptions}
           name="correctAnswer"
           label="Correct Answer"
           helpText={errors.question}

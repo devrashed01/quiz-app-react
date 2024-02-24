@@ -48,6 +48,7 @@ export default function AddQuestionModal({ onClose, open }: Props) {
     }));
   };
 
+  // option value change handler
   const onOptionChange = (index: number, value: string) => {
     const newOptions = [...form.options];
     newOptions[index] = value;
@@ -93,6 +94,7 @@ export default function AddQuestionModal({ onClose, open }: Props) {
       newErrors.correctAnswer = 'Correct answer is required';
     }
 
+    // check if there are any errors
     if (
       !form.question ||
       form.options.some((option) => !option) ||
@@ -120,6 +122,13 @@ export default function AddQuestionModal({ onClose, open }: Props) {
     onClose();
   };
 
+  const selectOptions = form.options
+    .filter((el) => !!el)
+    .map((option, index) => ({
+      label: option,
+      value: index + '',
+    }));
+
   return (
     <Modal title="Add Question" className="max-w-2xl" onCancel={onClose} visible={open}>
       <form onSubmit={submitHandler} className="flex flex-col gap-3">
@@ -145,12 +154,7 @@ export default function AddQuestionModal({ onClose, open }: Props) {
           placeholder="Select correct answer"
           onChange={selectHandler}
           value={form.correctAnswer}
-          options={form.options
-            .filter((el) => !!el)
-            .map((option, index) => ({
-              label: option,
-              value: index + '',
-            }))}
+          options={selectOptions}
           name="correctAnswer"
           label="Correct Answer"
           helpText={errors.correctAnswer}
