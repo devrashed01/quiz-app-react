@@ -1,25 +1,28 @@
 import Card from 'components/Card';
 import NoData from 'components/NoData';
-import useAppState from 'hooks/useAppState';
 import { cn } from 'utils/cn';
 
-export default function PreviousAnswers() {
-  const { previousAnswers } = useAppState();
+type Props = {
+  answers: AnswerType[];
+};
+
+export default function AnswersList({ answers }: Props) {
   return (
-    <div className="max-w-2xl flex-1 mx-auto">
-      <h2 className="text-lg mb-5">Previous answers:</h2>
-      {previousAnswers.length > 0 ? (
-        previousAnswers.map((answer) => (
+    <>
+      {answers.length > 0 ? (
+        answers.map((answer, index) => (
           <Card className="mb-3" key={answer.id}>
-            <h3 className="mb-3">{answer.question}</h3>
+            <h3 className="mb-3">
+              {index + 1}. {answer.question}
+            </h3>
             <ul>
               {answer.options.map((option, index) => (
                 <li
                   key={index}
-                  className={cn('p-2 border border-slate-300 rounded-md mb-2', {
-                    'text-green-600 border-green-500':
+                  className={cn('text-sm p-2 border border-slate-300 rounded-md mb-2', {
+                    'bg-green-600 text-white border-transparent':
                       answer.answer === index && answer.answer === answer.correctAnswer,
-                    'text-red-500 border-red-500':
+                    'bg-red-500 text-white border-transparent':
                       answer.answer === index && answer.answer !== answer.correctAnswer,
                   })}
                 >
@@ -32,6 +35,6 @@ export default function PreviousAnswers() {
       ) : (
         <NoData />
       )}
-    </div>
+    </>
   );
 }
