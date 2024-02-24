@@ -131,7 +131,7 @@ export default function EditQuestionModal({ onClose, data, open }: Props) {
               value: index + '',
             }))}
           name="correctAnswer"
-          label="Question"
+          label="Correct Answer"
           helpText={errors.question}
           error={!!errors.question}
         />

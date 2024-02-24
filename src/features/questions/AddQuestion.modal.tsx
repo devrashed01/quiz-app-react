@@ -151,7 +151,7 @@ export default function AddQuestionModal({ onClose, open }: Props) {
               value: index + '',
             }))}
           name="correctAnswer"
-          label="Question"
+          label="Correct Answer"
           helpText={errors.correctAnswer}
           error={!!errors.correctAnswer}
         />
