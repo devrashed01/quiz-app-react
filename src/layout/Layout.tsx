@@ -12,9 +12,14 @@ export default function Layout() {
   const isAdmin = userRole === 'admin';
   return (
     <div className="p-5 pt-0">
+      <div className="text-sm pt-2 font-medium text-center block text-slate-400 mr-auto md:hidden">
+        Logged In As: {userRole}
+      </div>
       <header className="sticky top-0 bg-[#f5f5f5] border-b py-5 mb-10 flex items-center gap-10">
-        <Logo />
-        <span className="text-sm font-medium text-slate-400 mr-auto">Logged In As: {userRole}</span>
+        <Logo className="mr-auto" />
+        <span className="text-sm font-medium text-slate-400 mr-auto hidden md:block">
+          Logged In As: {userRole}
+        </span>
         {isAdmin && (
           <nav>
             <ul className="flex gap-3">

@@ -43,7 +43,7 @@ export default function AnswersPage() {
   const isUser = userRole === 'user';
 
   return (
-    <div className="flex">
+    <div className="lg:flex gap-5">
       <div className="max-w-2xl mx-auto flex-1">
         {answers.length > 0 && !showQuestions ? (
           <>
