@@ -15,12 +15,14 @@ export default function AnswersPage() {
 
   const isUser = userRole === 'user';
 
-  // Show questions if there are no answers and the user is the one viewing the page
+  // Show questions if there are no answers submitted yet and the user is the one viewing the page
   useEffect(() => {
     if (answers.length <= 0 && isUser) {
       setShowQuestions(true);
     }
   }, [answers.length, isUser]);
+
+  //
 
   const nextHandler = (answer: AnswerType) => {
     const isLastQuestion = currentQuestionPosition === questions.length - 1;
