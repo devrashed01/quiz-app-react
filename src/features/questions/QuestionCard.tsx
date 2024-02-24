@@ -18,7 +18,7 @@ export default function QuestionCard({
 }: Props) {
   return (
     <Card key={question.id} className="p-4 mb-2">
-      <h3 className="flex justify-between">
+      <h3 className="flex items-start justify-between">
         <span className="flex-1">
           {index + 1}. {question.question}{' '}
         </span>

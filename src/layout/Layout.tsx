@@ -15,20 +15,20 @@ export default function Layout() {
       <div className="text-sm pt-2 font-medium text-center block text-slate-400 mr-auto md:hidden">
         Logged In As: {userRole}
       </div>
-      <header className="sticky top-0 bg-[#f5f5f5] border-b py-5 mb-10 flex items-center gap-10">
+      <header className="sticky top-0 bg-[#f5f5f5] border-b py-5 mb-10 flex items-center gap-2 lg:gap-10">
         <Logo className="mr-auto" />
         <span className="text-sm font-medium text-slate-400 mr-auto hidden md:block">
           Logged In As: {userRole}
         </span>
         {isAdmin && (
           <nav>
-            <ul className="flex gap-3">
+            <ul className="flex gap-2 lg:gap-3">
               {menuLinks.map((el) => (
                 <li key={el.path}>
                   <NavLink
                     className={({ isActive }) =>
                       cn(
-                        `transition-all pl-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-full before:transition-all before:bg-blue-500 before:opacity-0 relative ${
+                        `transition-all pl-3 md:before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-full before:transition-all before:bg-blue-500 before:opacity-0 relative ${
                           isActive ? 'text-blue-400 before:opacity-100' : 'hover:text-blue-400'
                         }`,
                       )

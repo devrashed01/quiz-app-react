@@ -29,10 +29,10 @@ export default function Question({ data, currentPosition, totalCount, onNext }: 
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h3 className="text-3xl mb-10 flex items-center text-primary-100 justify-between gap-5">
+      <h3 className="text-lg md:text-2xl xl:text-3xl mb-10 flex items-center text-primary-100 justify-between gap-5">
         {data.question}{' '}
         <span className="font-normal">
-          <span className="text-5xl">{currentPosition}</span>/{totalCount}
+          <span className="text-2xl md:text-3xl xl:text-5xl">{currentPosition}</span>/{totalCount}
         </span>
       </h3>
       <Card className="p-0 max-w-lg mx-auto">
