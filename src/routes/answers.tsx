@@ -102,7 +102,7 @@ export default function AnswersPage() {
           </>
         )}
       </div>
-
+      {/* show previous answers only on (user & has submitted answers & not performing quiz) */}
       {!showQuestions && answers.length > 0 && isUser && (
         <div className="max-w-2xl flex-1 mx-auto">
           <h2 className="text-lg mb-5">Previous answers</h2>
