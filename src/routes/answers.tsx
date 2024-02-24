@@ -56,7 +56,7 @@ export default function AnswersPage() {
             {answers.length > 0 && (
               <div className="flex items-center justify-between mb-5">
                 <h3 className="text-lg">
-                  Total correct answer: {totalCorrectAnswers} out of {questions.length}
+                  Total correct answer: {totalCorrectAnswers} out of {answers.length}
                 </h3>
                 {isUser && <Button onClick={retakeQuiz}>Retake quiz</Button>}
               </div>
