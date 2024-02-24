@@ -65,31 +65,19 @@ const Routes = () => {
     setRoutes(getRoutes(userRole));
   }, [userRole]);
 
+  const preventDefault = (e: Event) => {
+    e.preventDefault();
+  };
+
   useEffect(() => {
-    document.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-    });
-
-    document.addEventListener('copy', (e) => {
-      e.preventDefault();
-    });
-
-    document.addEventListener('selectstart', (e) => {
-      e.preventDefault();
-    });
+    document.addEventListener('contextmenu', preventDefault);
+    document.addEventListener('copy', preventDefault);
+    document.addEventListener('selectstart', preventDefault);
 
     return () => {
-      document.removeEventListener('contextmenu', (e) => {
-        e.preventDefault();
-      });
-
-      document.removeEventListener('copy', (e) => {
-        e.preventDefault();
-      });
-
-      document.removeEventListener('selectstart', (e) => {
-        e.preventDefault();
-      });
+      document.removeEventListener('contextmenu', preventDefault);
+      document.removeEventListener('copy', preventDefault);
+      document.removeEventListener('selectstart', preventDefault);
     };
   }, []);
 
