@@ -30,7 +30,7 @@ export default function Button({
         {
           'bg-primary-100 hover:bg-primary-200 text-white': color === 'primary',
           'bg-slate-300 hover:bg-slate-500 text-white': color === 'secondary',
-          'bg-red-500 hover:bg-red-600 text-white': color === 'danger',
+          'bg-[#d24747] hover:bg-red-600 text-white': color === 'danger',
           'text-sm py-2 px-2': size === 'sm',
           'text-md font-medium py-2 px-2 lg:px-4': size === 'md',
           'text-lg font-medium py-3 px-5': size === 'lg',
