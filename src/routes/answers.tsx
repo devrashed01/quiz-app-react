@@ -22,17 +22,37 @@ export default function AnswersPage() {
     }
   }, [answers.length, isUser]);
 
-  //
+  // update the current question position from the local storage
+  useEffect(() => {
+    const position = localStorage.getItem('currentQuestionPosition');
+    if (position) {
+      setCurrentQuestionPosition(JSON.parse(position));
+    }
+  }, []);
+
+  // update the answered questions from the local storage
+  useEffect(() => {
+    const cachedAnswered = localStorage.getItem('answered');
+    if (cachedAnswered) {
+      setAnswered(JSON.parse(cachedAnswered));
+    }
+  }, []);
 
   const nextHandler = (answer: AnswerType) => {
     const isLastQuestion = currentQuestionPosition === questions.length - 1;
     if (isLastQuestion) {
       submitAnswers([...answered, answer]);
       setIsComplete(true);
+
+      localStorage.removeItem('currentQuestionPosition');
+      localStorage.removeItem('answered');
+      return;
     }
 
     setAnswered((prev) => [...prev, answer]);
     setCurrentQuestionPosition((prev) => prev + 1);
+    localStorage.setItem('currentQuestionPosition', JSON.stringify(currentQuestionPosition + 1));
+    localStorage.setItem('answered', JSON.stringify([...answered, answer]));
   };
 
   const retakeQuiz = () => {
