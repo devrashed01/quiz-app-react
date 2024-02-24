@@ -102,6 +102,7 @@ export default function AddQuestionModal({ onClose, open }: Props) {
       return;
     }
 
+    // TODO: add feature to add or remove options
     if (form.options.length < 2) {
       toast.error('At least 2 options are required');
       return;
