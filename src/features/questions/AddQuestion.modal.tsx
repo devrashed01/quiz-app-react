@@ -155,7 +155,9 @@ export default function AddQuestionModal({ onClose, open }: Props) {
           helpText={errors.correctAnswer}
           error={!!errors.correctAnswer}
         />
-        <Button>Update</Button>
+        <div className="flex justify-end mt-2">
+          <Button>Submit</Button>
+        </div>
       </form>
     </Modal>
   );
