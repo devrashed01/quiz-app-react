@@ -90,7 +90,7 @@ export default function AnswersPage() {
         {showQuestions && isUser && (
           <>
             {isComplete ? (
-              <QuizCompleteScreen onClose={onQuizComplete} />
+              <QuizCompleteScreen onClick={onQuizComplete} />
             ) : (
               <Question
                 currentPosition={currentQuestionPosition + 1}
