@@ -65,6 +65,34 @@ const Routes = () => {
     setRoutes(getRoutes(userRole));
   }, [userRole]);
 
+  useEffect(() => {
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+
+    document.addEventListener('copy', (e) => {
+      e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', (e) => {
+      e.preventDefault();
+    });
+
+    return () => {
+      document.removeEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      document.removeEventListener('copy', (e) => {
+        e.preventDefault();
+      });
+
+      document.removeEventListener('selectstart', (e) => {
+        e.preventDefault();
+      });
+    };
+  }, []);
+
   const appRoutes = useRoutes(routes);
 
   if (userRole) {
