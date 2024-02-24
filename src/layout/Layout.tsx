@@ -11,7 +11,7 @@ export default function Layout() {
 
   const isAdmin = userRole === 'admin';
   return (
-    <div className="p-2 md:p-5 pt-0">
+    <div className="p-2 md:p-5 md:pt-0">
       <div className="text-sm pt-2 font-medium text-center block text-slate-400 mr-auto md:hidden">
         Logged In As: {userRole}
       </div>
