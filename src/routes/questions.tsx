@@ -32,7 +32,7 @@ export default function QuestionsPage() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="flex justify-between items-center mb-5 border-b border-slate-300 pb-2">
-        <h2 className="text-2xl font-medium">Questions:</h2>
+        <h2 className="text-2xl font-medium">Questions</h2>
         <Button onClick={openAddModalHandler}>Add Question</Button>
       </div>
       {questions.map((question, index) => (

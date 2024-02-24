@@ -82,7 +82,7 @@ export default function AnswersPage() {
 
       {!showQuestions && answers.length > 0 && isUser && (
         <div className="max-w-2xl flex-1 mx-auto">
-          <h2 className="text-lg mb-5">Previous answers:</h2>
+          <h2 className="text-lg mb-5">Previous answers</h2>
           <AnswersList answers={previousAnswers} />
         </div>
       )}
