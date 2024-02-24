@@ -16,7 +16,7 @@ export default function Layout() {
         Logged In As: {userRole}
       </div>
       <header className="sticky top-0 bg-[#f5f5f5] border-b py-5 mb-10 flex items-center gap-2 lg:gap-10">
-        <Logo className="mr-auto" />
+        <Logo className="mr-auto md:mr-0" />
         <span className="text-sm font-medium text-slate-400 mr-auto hidden md:block">
           Logged In As: {userRole}
         </span>
