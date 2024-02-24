@@ -42,7 +42,7 @@ export default function Layout() {
             </ul>
           </nav>
         )}
-        <Button className="whitespace-nowrap px-2 lg:px-4" onClick={() => logOut()}>
+        <Button className="whitespace-nowrap" onClick={() => logOut()}>
           Sign out
         </Button>
       </header>
